@@ -2,6 +2,7 @@
 import ThemePicker from "../components/theme-picker.astro";
 import Layout from "../layouts/layout.astro";
 
+import SaritasaLogo from "../assets/logo-saritasa.webp";
 import TradingViewLogo from "../assets/logo-tradingview.svg";
 import GithubLogo from "../assets/logo-github.svg";
 import TelegramLogo from "../assets/logo-telegram.svg";
@@ -34,6 +35,15 @@ import Pill from "../components/pill.astro";
       many projects in
       <span> </span>
       <Pill href="https://www.saritasa.com" class="group">
+        <img
+          src={SaritasaLogo.src}
+          alt=""
+          width="20"
+          height="20"
+          slot="icon"
+          aria-hidden="true"
+          class="size-5 shrink-0 group-hover:scale-105 group-hover:-rotate-5 transition"
+        />
         saritasa
       </Pill>
       , built crms, social networks, landings, and mobile apps. if interested,
