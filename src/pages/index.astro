@@ -1,17 +1,16 @@
 ---
 import ThemePicker from "../components/theme-picker.astro";
-import GreenyLayout from "../layouts/greeny-layout.astro";
+import Layout from "../layouts/layout.astro";
 
 import TradingViewLogo from "../assets/logo-tradingview.svg";
 import GithubLogo from "../assets/logo-github.svg";
 import TelegramLogo from "../assets/logo-telegram.svg";
 import LinkedInLogo from "../assets/logo-linkedin.svg";
 
-import "../styles/global.css";
 import Pill from "../components/pill.astro";
 ---
 
-<GreenyLayout>
+<Layout>
   <div class="flex flex-col gap-16 font-louize h-full">
     <p>
       yo, im tem. i love programming, design, and my beatuful wife. for me,
@@ -58,11 +57,11 @@ import Pill from "../components/pill.astro";
         .
       </p>
       <div class="flex gap-2"></div>
-      <p class="font-ibm"></p>
+      <p></p>
     </div>
     <div class="flex flex-col gap-8 mt-auto">
-      <div class="w-full bg-[#848873]/40 h-px"></div>
+      <div class="w-full bg-divider h-px"></div>
       <ThemePicker />
     </div>
   </div>
-</GreenyLayout>
+</Layout>

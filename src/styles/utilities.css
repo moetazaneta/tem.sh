@@ -1,0 +1,14 @@
+@utility squircle-* {
+  --squircle-multiplier: 1;
+  @supports (border-radius: superellipse(1.5)) {
+    --squircle-multiplier: 1.75;
+  }
+  border-radius: calc(var(--squircle-multiplier) * --value(--radius-*));
+  border-radius: calc(var(--squircle-multiplier) * --value([*]));
+  corner-shape: squircle;
+}
+
+@utility squircle-full {
+  border-radius: calc(infinity* 1px);
+  corner-shape: superellipse(1.5);
+}

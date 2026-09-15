@@ -1,0 +1,24 @@
+@theme static {
+  --font-davinci: "TRJN Da Vinci", serif;
+  --font-louize: "Louize", serif;
+
+  --color-canvas: light-dark(#f0f0ea, #20211d);
+  --color-content: light-dark(#46463e, #f0f0ea);
+  --color-content-muted: light-dark(#6c6e60, #a9ad99);
+  --color-accent: #848873;
+  --color-surface-1: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  --color-surface-2: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  --color-divider: color-mix(in srgb, var(--color-accent) 40%, transparent);
+
+
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html[data-mode="dark"] {
+    color-scheme: dark;
+  }
+}
