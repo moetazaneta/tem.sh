@@ -6,19 +6,23 @@ import TradingViewLogo from "../assets/logo-tradingview.svg";
 import GithubLogo from "../assets/logo-github.svg";
 import TelegramLogo from "../assets/logo-telegram.svg";
 import LinkedInLogo from "../assets/logo-linkedin.svg";
+import ZeroTwo from "../assets/02.webp";
 
 import Pill from "../components/pill.astro";
 ---
 
 <Layout>
   <div class="flex flex-col gap-16 font-louize h-full">
-    <p>
-      yo, im tem. i love programming, design, and my beatuful wife. for me,
-      simple base and stylized details makes best user experience.
+    <p class="animate-fade-in-up">
+      yo, i'm tem. i love programming, design, and my beatuful wife. <br />
+      for me, simplicity and stylized details makes best user experience. <br />
+      i value adaptabilty, ability to learn and understand new things,
+      unfamiliar things.
     </p>
 
-    <p>
-      currently a frontend engineer at{" "}
+    <p class="animate-fade-in-up [animation-delay:100ms] [animation-fill-mode:both]">
+      currently a frontend engineer at
+      <span> </span>
       <Pill href="https://tradingview.com" class="group">
         <TradingViewLogo
           slot="icon"
@@ -26,10 +30,57 @@ import Pill from "../components/pill.astro";
         />
         tradingview
       </Pill>
-      , working on trading panel at chart product. if interested, here is my{" "}
-      <Pill href="/cv">cv</Pill>.
+      , working on trading panel at chart product. before that, i was working on
+      many projects in
+      <span> </span>
+      <Pill href="https://www.saritasa.com" class="group">
+        saritasa
+      </Pill>
+      , built crms, social networks, landings, and mobile apps. if interested,
+      here is my <Pill href="/cv">cv</Pill>.
     </p>
-    <div class="flex flex-col gap-4">
+    <p class="animate-fade-in-up [animation-delay:200ms] [animation-fill-mode:both]">
+      <span>
+        {" "}
+        i started many things, some even completed, but daily i only use{" "}
+      </span>
+      <Pill href="https://github.com/moetazaneta/oh-my-02" class="group">
+        <img
+          src={ZeroTwo.src}
+          alt=""
+          slot="icon"
+          aria-hidden="true"
+          class="squircle-lg size-5 shrink-0 group-hover:scale-500 group-hover:-rotate-5 transition"
+        />
+        02
+      </Pill>
+      <span> </span>
+      discord bot that collect our media updates and two obsidian plugins:
+      <span> </span>
+      <Pill
+        href="https://github.com/moetazaneta/obsidian-base-timeline"
+        class="group"
+      >
+        <GithubLogo
+          slot="icon"
+          class="size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
+        />
+        timeline base
+      </Pill>
+      <span> and </span>
+      <Pill
+        href="https://github.com/moetazaneta/obsidian-on-this-day-plugin"
+        class="group"
+      >
+        <GithubLogo
+          slot="icon"
+          class="size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
+        />
+        journal calendar
+      </Pill>
+      <span>.</span>
+    </p>
+    <div class="flex flex-col gap-4 animate-fade-in-up [animation-delay:300ms] [animation-fill-mode:both]">
       <p>
         find me on
         <span> </span>
@@ -37,18 +88,18 @@ import Pill from "../components/pill.astro";
           href="https://www.linkedin.com/in/moeta/"
           class="ml-0.5 mr-1.5 align-text-bottom"
         >
-          <LinkedInLogo class="size-5 inline hover:scale-105 hover:-rotate-5 transition squircle-lg" />
+          <LinkedInLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>
         <a
           href="https://github.com/moetazaneta/"
           class="mr-1.5 align-text-bottom"
         >
-          <GithubLogo class="size-5 inline hover:scale-105 hover:-rotate-5 transition squircle-lg" />
+          <GithubLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>
         <a href="https://t.me/temusuke/" class="align-text-bottom">
-          <TelegramLogo class="size-5 inline hover:scale-105 hover:-rotate-5 transition squircle-lg" />
+          <TelegramLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>, or mail me at{" "}
         <Pill class="" href="mailto:yo@tem.sh">
@@ -59,9 +110,9 @@ import Pill from "../components/pill.astro";
       <div class="flex gap-2"></div>
       <p></p>
     </div>
-    <div class="flex flex-col gap-8 mt-auto">
-      <div class="w-full bg-divider h-px"></div>
-      <ThemePicker />
+    <div class="flex flex-col items-end gap-8 mt-auto">
+      <div class="w-full bg-divider h-px animate-fade-in [animation-delay:400ms] [animation-fill-mode:both]"></div>
+      <ThemePicker class="animate-fade-in-up [animation-delay:500ms] [animation-fill-mode:both]" />
     </div>
   </div>
 </Layout>

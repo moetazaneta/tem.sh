@@ -10,7 +10,27 @@
   --color-surface-2: color-mix(in srgb, var(--color-accent) 30%, transparent);
   --color-divider: color-mix(in srgb, var(--color-accent) 40%, transparent);
 
+  --animate-fade-in-up: fade-in-up 0.5s ease 1;
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(15px); /* Starts slightly lower */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Ends at natural position */
+    }
+  }
 
+  --animate-fade-in: fade-in 0.5s ease 1;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 @layer base {
