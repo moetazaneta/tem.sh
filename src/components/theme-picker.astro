@@ -1,10 +1,12 @@
 ---
-import ThemePicker from "./theme-picker.tsx";
+import { ThemePicker } from "./theme-picker.tsx";
 import Moon from "phosphor-astro/Moon.astro";
 import Sun from "phosphor-astro/Sun.astro";
+
+const { class: className } = Astro.props;
 ---
 
-<ThemePicker client:load>
+<ThemePicker client:load class={className}>
   <Moon slot="moon" width={20} height={20} class="size-5" aria-hidden="true" />
   <Sun slot="sun" width={20} height={20} class="size-5" aria-hidden="true" />
 </ThemePicker>

@@ -2,9 +2,10 @@ import { createSignal, onCleanup, onMount, Show, type JSX } from "solid-js";
 
 type Mode = "light" | "dark";
 
-export default function ThemePicker(props: {
+export function ThemePicker(props: {
   moon: JSX.Element;
   sun: JSX.Element;
+  class?: string;
 }) {
   const [mode, setMode] = createSignal<Mode>("light");
   const [preference, setPreference] = createSignal<Mode | "auto">("auto");
@@ -47,29 +48,29 @@ export default function ThemePicker(props: {
   };
 
   return (
-    <div class="flex items-center">
-      <button
-        type="button"
-        onClick={() => selectMode(mode() === "light" ? "dark" : "light")}
-        class="inline-flex w-fit items-center justify-center p-2 rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
-        aria-label={`Switch to ${mode() === "light" ? "dark" : "light"} mode`}
-        title={`Current mode: ${mode()}`}
-      >
-        <Show when={mode() === "light"} fallback={props.sun}>
-          {props.moon}
-        </Show>
-      </button>
+    <div class={`flex items-center ${props.class}`}>
       <Show when={preference() !== "auto"}>
         <button
           type="button"
           onClick={() => selectMode("auto")}
           class="px-2 py-1 text-lg rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
-          aria-label="Use automatic color scheme"
-          title="Follow system color scheme"
+          aria-label="use automatic color scheme"
+          title="follow system color scheme"
         >
           auto
         </button>
       </Show>
+      <button
+        type="button"
+        onClick={() => selectMode(mode() === "light" ? "dark" : "light")}
+        class="inline-flex w-fit items-center justify-center p-2 rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
+        aria-label={`switch to ${mode() === "light" ? "dark" : "light"} mode`}
+        title={`currently in ${mode()} mode`}
+      >
+        <Show when={mode() === "light"} fallback={props.sun}>
+          {props.moon}
+        </Show>
+      </button>
     </div>
   );
 }
