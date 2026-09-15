@@ -15,22 +15,7 @@ export default defineConfig({
       options: {
         remPx: 14,
       },
-      target: (id) => {
-        console.debug(`Detecting ${id}`);
-        return "html";
-        // if (id.endsWith(".html.typ") || id.includes("/html/")) return "html";
-        // return "svg";
-      },
-      // === Use html-text output rather than hAST ===
-      // htmlMode: "hast", // added in v0.12.3
-      // === <img src="xxx.svg"> instead of inlined <svg> ===
-      // emitSvg: true,
-      // emitSvgDir: ".astro/typst"
-      // === Add non-system fonts here ===
-      // fontArgs: [
-      //   { fontPaths: ['/system/fonts', '/user/fonts'] },
-      //   { fontBlobs: [customFontBuffer] }
-      // ],
+      target: () => "html",
     }),
   ],
 });
