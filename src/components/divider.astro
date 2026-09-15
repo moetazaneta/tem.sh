@@ -1,0 +1,75 @@
+<div class="divider zigzag mr-8"></div>
+
+<style>
+  .divider {
+    --divider-color: white;
+    --divider-height: 16px;
+
+    height: var(--divider-height);
+
+    background-repeat: repeat no-repeat;
+  }
+
+  .xx {
+    background:
+      /*radial-gradient(
+        circle,
+        transparent 20%,
+        red 20%,
+        red 80%,
+        transparent 80%,
+        transparent
+      ),*/
+      /*radial-gradient(
+          circle,
+          transparent 20%,
+          green 20%,
+          green 80%,
+          transparent 80%,
+          transparent
+        )
+        50px 50px,*/
+      linear-gradient(purple 8px, transparent 8px) 0 -4px,
+      linear-gradient(90deg, orange 8px, transparent 8px) -4px 0;
+    background-color: slategray;
+    background-size:
+      /*100px 100px,*/
+      /*100px 100px,*/
+      50px 50px,
+      50px 50px;
+  }
+
+  .zigzag {
+    background-color: transparent;
+    background-image:
+      linear-gradient(45deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(315deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(135deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(225deg, var(--divider-color) 25%, transparent 25%);
+    background-position:
+      calc(var(--divider-height) / 4) 0,
+      calc(var(--divider-height) / 4) 0,
+      0 calc(var(--divider-height) / 2),
+      0 calc(var(--divider-height) / 2);
+    background-size: calc(var(--divider-height) / 2)
+      calc(var(--divider-height) / 2);
+  }
+
+  .thick-zigzag {
+    background-color: transparent;
+    background-image:
+      linear-gradient(45deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(315deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(0deg, var(--divider-color) 100%),
+      linear-gradient(135deg, var(--divider-color) 25%, transparent 25%),
+      linear-gradient(225deg, var(--divider-color) 25%, transparent 25%);
+    background-position:
+      calc(var(--divider-height) / 4) calc(var(--divider-height) / -4),
+      calc(var(--divider-height) / 4) calc(var(--divider-height) / -4),
+      0 calc(var(--divider-height) / 4),
+      0 calc(var(--divider-height) / 4 * 3),
+      0 calc(var(--divider-height) / 4 * 3);
+    background-size: calc(var(--divider-height) / 2)
+      calc(var(--divider-height) / 2);
+  }
+</style>

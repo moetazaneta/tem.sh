@@ -1,0 +1,7 @@
+---
+const { Icon, href, children } = Astro.props;
+---
+
+<a href={href} class="flex items-center gap-1 border-b-2 border-white/30"
+  ><slot name="icon" /><slot /></a
+>

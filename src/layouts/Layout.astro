@@ -1,23 +1,84 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asset&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Chango&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IM+Fell+English:ital@0;1&family=Racing+Sans+One&family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>tem</title>
+  </head>
+  <body class="flex flex-col items-center text-white noise bg text-xl">
+    <main class="max-w-screen-sm w-full py-32">
+      <slot />
+    </main>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency=".1 .01"></feTurbulence>
+        <feColorMatrix
+          values="0 0 0 .03 .02
+                                     0 0 0 .08 .22
+                                     0 0 0 .06 .14
+                                     0 0 0 0 1"
+        ></feColorMatrix>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
+    </svg> -->
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg {
+    --bg: oklch(43.2% 0.095 166.913);
+    --stripe: rgba(255, 255, 255, 0.02);
+    --size: 16px;
+
+    isolation: isolate;
+
+    /*background-color: #c9c2b9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23b0a79c' fill-opacity='0.4' d='M12 2c-4 4-8 6-8 10s4 6 8 10 8-6 8-10-4-6-8-10z'/%3E%3C/svg%3E");
+    background-size: 12px 12px;*/
+
+    background-color: var(--bg);
+    opacity: 1;
+    background-size: var(--size) var(--size);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe),
+      var(--stripe) 2.3000000000000003px,
+      var(--bg) 2.3000000000000003px,
+      var(--bg)
+    );
+  }
+
+  .noise::before {
+    /*content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    filter: url("#noise-filter");
+    opacity: 0.02;*/
+
+    /*content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org/2000/svg' width='100%' height='100%'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E");
+    pointer-events: none;*/
+  }
 </style>

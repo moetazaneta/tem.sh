@@ -1,0 +1,11 @@
+---
+const { href, class: className } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`px-1.5 inline-flex items-center gap-1 bg-[#848873]/15 hover:bg-[#848873]/30 squircle-full ${className}`}
+>
+  <slot name="icon" />
+  <slot />
+</a>

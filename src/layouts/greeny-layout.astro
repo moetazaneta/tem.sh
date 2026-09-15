@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      (() => {
+        const systemMode = window.matchMedia("(prefers-color-scheme: dark)");
+        const applyMode = (preference) => {
+          document.documentElement.dataset.modePreference = preference;
+          document.documentElement.dataset.mode =
+            preference === "auto"
+              ? systemMode.matches
+                ? "dark"
+                : "light"
+              : preference;
+          window.dispatchEvent(new CustomEvent("modechange"));
+        };
+        const restoreMode = () => {
+          let preference = "auto";
+          try {
+            const saved = localStorage.getItem("mode");
+            if (saved === "light" || saved === "dark") preference = saved;
+          } catch {}
+          applyMode(preference);
+        };
+        restoreMode();
+        document.addEventListener("astro:after-swap", restoreMode);
+        systemMode.addEventListener("change", () => {
+          if (document.documentElement.dataset.modePreference === "auto")
+            applyMode("auto");
+        });
+        window.addEventListener("storage", (event) => {
+          if (event.key === "mode" || event.key === null) restoreMode();
+        });
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asset&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Chango&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IM+Fell+English:ital@0;1&family=Lilex:ital,wght@0,100..700;1,100..700&family=Racing+Sans+One&family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>tem</title>
+  </head>
+  <body class="flex flex-col items-center bg-[var(--page-background)] text-[var(--page-text)] text-2xl">
+    <main class="max-w-screen-sm w-full pt-32 pb-16 h-full">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(html) {
+    --page-background: #f0f0ea;
+    --page-text: #46463e;
+    color-scheme: light;
+  }
+  :global(html[data-mode="dark"]) {
+    --page-background: #20211d;
+    --page-text: #f0f0ea;
+    color-scheme: dark;
+  }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

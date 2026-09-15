@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/layout.astro";
+import Divider from "../components/divider.astro";
+import Link from "../components/link.astro";
+
+import GithubLogoIcon from "phosphor-astro/GithubLogo.astro";
+import TelegramLogoIcon from "phosphor-astro/TelegramLogo.astro";
+// import XLogoIcon from "phosphor-astro/AnilistLogo.astro";
+
+import "../styles/global.css";
+---
+
+<Layout>
+  <div class="flex flex-col gap-8">
+    <h1 class="text-2xl font-chango">yo!</h1>
+    <div class="flex flex-col gap-4">
+      <p class="font-ibm">
+        My name is Artem Sotnichenko, or Tem for short! I love programming and
+        my beatuful wife.
+      </p>
+      <p class="font-ibm">
+        I'm curently a frontend engineer at TradingView. In my free time I
+        explore design engineering, play games and watch or read ficiton.
+      </p>
+    </div>
+    <Divider />
+    <div class="flex flex-col gap-4">
+      <p class="font-ibm">find me on</p>
+      <!-- <GithubLogoIcon /> -->
+      <div class="flex gap-4">
+        <Link href="https://github.com/moetazaneta/">
+          <!-- <GithubLogoIcon class="size-5" slot="icon" /> -->
+          github
+        </Link>
+        <Link href="https://t.me/temusuke/">
+          <!-- <TelegramLogoIcon class="size-5" slot="icon" /> -->
+          telegram
+        </Link>
+        <Link href="https://anilist.co/user/temu/"> anilist </Link>
+        <Link href="https://letterboxd.com/moeta/"> letterboxd </Link>
+        <Link href="https://www.goodreads.com/user/show/95432671">
+          goodreads
+        </Link>
+        <Link href="mailto:yo@tem.sh">yo@tem.sh</Link>
+      </div>
+    </div>
+  </div>
+</Layout>
