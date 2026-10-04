@@ -53,7 +53,7 @@ export function ThemePicker(props: {
         <button
           type="button"
           onClick={() => selectMode("auto")}
-          class="px-2 py-1 text-lg rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
+          class="px-2 py-1 text-[22px] sm:text-lg rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
           aria-label="use automatic color scheme"
           title="follow system color scheme"
         >
@@ -63,7 +63,7 @@ export function ThemePicker(props: {
       <button
         type="button"
         onClick={() => selectMode(mode() === "light" ? "dark" : "light")}
-        class="inline-flex w-fit items-center justify-center p-2 rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
+        class="inline-flex w-fit items-center justify-center p-2.5 sm:p-2 rounded-lg cursor-pointer hover:bg-surface-1 focus-visible:outline-2 focus-visible:outline-offset-2"
         aria-label={`switch to ${mode() === "light" ? "dark" : "light"} mode`}
         title={`currently in ${mode()} mode`}
       >

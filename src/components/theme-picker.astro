@@ -7,6 +7,6 @@ const { class: className } = Astro.props;
 ---
 
 <ThemePicker client:load class={className}>
-  <Moon slot="moon" width={20} height={20} class="size-5" aria-hidden="true" />
-  <Sun slot="sun" width={20} height={20} class="size-5" aria-hidden="true" />
+  <Moon slot="moon" width={20} height={20} class="size-6 sm:size-5" aria-hidden="true" />
+  <Sun slot="sun" width={20} height={20} class="size-6 sm:size-5" aria-hidden="true" />
 </ThemePicker>

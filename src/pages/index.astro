@@ -13,7 +13,7 @@ import Pill from "../components/pill.astro";
 ---
 
 <Layout>
-  <div class="flex flex-col gap-16 font-louize h-full">
+  <div class="flex flex-col gap-8 sm:gap-16 font-louize h-full">
     <p class="animate-fade-in-up">
       yo, i'm tem. i love programming, design, and my beatuful wife. <br />
       for me, simplicity and stylized details makes best user experience. <br />
@@ -27,7 +27,7 @@ import Pill from "../components/pill.astro";
       <Pill href="https://tradingview.com" class="group">
         <TradingViewLogo
           slot="icon"
-          class="size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
+          class="size-6 sm:size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
         />
         tradingview
       </Pill>
@@ -42,7 +42,7 @@ import Pill from "../components/pill.astro";
           height="20"
           slot="icon"
           aria-hidden="true"
-          class="size-5 shrink-0 group-hover:scale-105 group-hover:-rotate-5 transition"
+          class="size-6 sm:size-5 shrink-0 group-hover:scale-105 group-hover:-rotate-5 transition"
         />
         saritasa
       </Pill>
@@ -60,7 +60,7 @@ import Pill from "../components/pill.astro";
           alt=""
           slot="icon"
           aria-hidden="true"
-          class="squircle-lg size-5 shrink-0 group-hover:scale-500 group-hover:-rotate-5 transition"
+          class="squircle-lg size-6 sm:size-5 shrink-0 group-hover:scale-500 group-hover:-rotate-5 transition"
         />
         02
       </Pill>
@@ -73,7 +73,7 @@ import Pill from "../components/pill.astro";
       >
         <GithubLogo
           slot="icon"
-          class="size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
+          class="size-6 sm:size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
         />
         timeline base
       </Pill>
@@ -84,7 +84,7 @@ import Pill from "../components/pill.astro";
       >
         <GithubLogo
           slot="icon"
-          class="size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
+          class="size-6 sm:size-5 squircle-lg group-hover:scale-105 group-hover:-rotate-5 transition"
         />
         journal calendar
       </Pill>
@@ -98,18 +98,18 @@ import Pill from "../components/pill.astro";
           href="https://www.linkedin.com/in/moeta/"
           class="ml-0.5 mr-1.5 align-text-bottom"
         >
-          <LinkedInLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
+          <LinkedInLogo class="size-6 sm:size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>
         <a
           href="https://github.com/moetazaneta/"
           class="mr-1.5 align-text-bottom"
         >
-          <GithubLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
+          <GithubLogo class="size-6 sm:size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>
         <a href="https://t.me/temusuke/" class="align-text-bottom">
-          <TelegramLogo class="size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
+          <TelegramLogo class="size-6 sm:size-5 inline hover:scale-120 hover:-rotate-3 transition ease-in squircle-lg" />
         </a>
         <span> </span>, or mail me at{" "}
         <Pill class="" href="mailto:yo@tem.sh">

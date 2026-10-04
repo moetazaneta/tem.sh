@@ -41,4 +41,10 @@
   html[data-mode="dark"] {
     color-scheme: dark;
   }
+
+  :root {
+    @variant max-sm {
+      --color-canvas: light-dark(#f0f0ea, #000);
+    }
+  }
 }
