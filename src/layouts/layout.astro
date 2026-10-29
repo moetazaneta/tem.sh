@@ -1,4 +1,5 @@
 ---
+import ThemePicker from "../components/theme-picker.astro";
 import "../styles/global.css";
 ---
 
@@ -46,9 +47,13 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>tem</title>
   </head>
-  <body class="flex flex-col items-center bg-canvas text-content text-2xl/8.5 sm:text-xl">
-    <main class="max-w-[42.5rem] w-full px-5 pt-10 pb-8 sm:pt-32 sm:pb-16 h-full">
+  <body class="flex flex-col items-center bg-canvas text-content text-2xl/8.5 sm:text-xl font-louize">
+    <main class="max-w-[42.5rem] w-full px-5 pt-10 pb-8 sm:pt-32 sm:pb-16 h-full flex flex-col gap-8">
       <slot />
+      <div class="flex flex-col items-end gap-8 mt-auto">
+        <div class="w-full bg-divider h-px animate-fade-in [animation-delay:400ms] [animation-fill-mode:both]"></div>
+        <ThemePicker class="animate-fade-in-up [animation-delay:500ms] [animation-fill-mode:both]" />
+      </div>
     </main>
   </body>
 </html>

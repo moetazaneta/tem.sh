@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/react':
+        specifier: ^6.0.6
+        version: 6.0.6(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@astrojs/solid-js':
         specifier: ^7.0.2
         version: 7.0.2(esbuild@0.28.2)(jiti@2.7.0)(solid-js@1.9.15)
@@ -20,15 +23,31 @@ importers:
       astro-typst:
         specifier: ^0.12.4
         version: 0.12.4(@myriaddreamin/typst-ts-node-compiler@0.7.0)(@myriaddreamin/typst-ts-renderer@0.7.0)(@myriaddreamin/typst.ts@0.7.0(@myriaddreamin/typst-ts-renderer@0.7.0))(astro@7.3.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0))(cheerio@1.2.0)
+      motion:
+        specifier: ^13.4.0
+        version: 13.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       phosphor-astro:
         specifier: ^2.1.0
         version: 2.1.0
+      react:
+        specifier: ^19.3.0
+        version: 19.3.0
+      react-dom:
+        specifier: ^19.3.0
+        version: 19.3.0(react@19.3.0)
       solid-js:
         specifier: ^1.9.15
         version: 1.9.15
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
 
 packages:
 
@@ -106,6 +125,15 @@ packages:
   '@astrojs/prism@4.0.2':
     resolution: {integrity: sha512-KTivpmnz6lDsC6o9H4+DNm2SrE/GHzw8cNAvEJwAvUT+eoaEnn/4NtbDNfRRaxaJHdp15gf+tfHAWiXR4wB3BA==}
     engines: {node: '>=22.12.0'}
+
+  '@astrojs/react@6.0.6':
+    resolution: {integrity: sha512-TQ9G2m2tIx9c105GmvjRAcTk+kV0QER5MsEPKUbK1Jm8SBYKzIzR89xh4L2vXAxI2zMfTMmsR7vln1TOLZpckw==}
+    engines: {node: '>=22.12.0'}
+    peerDependencies:
+      '@types/react': ^17.0.50 || ^18.0.21 || ^19.0.0
+      '@types/react-dom': ^17.0.17 || ^18.0.6 || ^19.0.0
+      react: ^17.0.2 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0
 
   '@astrojs/solid-js@7.0.2':
     resolution: {integrity: sha512-4Sk28a4HId176eXqEIrkuLmd+VFePwGSS/smL0ZdiUlb8cBAm5E5Gg0iSQIy/7bYuoj2xN398TcdtSZLl4regA==}
@@ -186,6 +214,18 @@ packages:
 
   '@babel/plugin-syntax-jsx@7.29.7':
     resolution: {integrity: sha512-TSu8+mHCoEaaCDEZ0I3+6mvTBYR4PCxQwf2z9/r5Tbztv6NaLR3B9thGTTxX2WGuGHJqRiAbKPeGTJ5XWXVg6A==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+
+  '@babel/plugin-transform-react-jsx-self@7.29.7':
+    resolution: {integrity: sha512-TL0hMc9xzy86VD31nUiwzd5otRAcyEPcsegCxolO0PvcXuH1v0kECe/UIznYFihpkvU5wg/jk4v0TTEFfm53fw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+
+  '@babel/plugin-transform-react-jsx-source@7.29.7':
+    resolution: {integrity: sha512-06IyK09H3wi4cGbhDBwp5gUGo0IKtnYa8tyTiephirPCK6fbobVGiXMMI5zLQ4aKEYP3wZ3ArU44o+8KMrSG/Q==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -806,6 +846,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@rolldown/pluginutils@1.0.0-rc.3':
+    resolution: {integrity: sha512-eybk3TjzzzV97Dlj5c+XrBFW57eTNhzod66y9HrBlzJ6NsCrWCp/2kaPS3K9wJmurBC0Tdw4yPjXKZqlznim3Q==}
+
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
@@ -991,6 +1034,14 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
+  '@types/react-dom@19.3.0':
+    resolution: {integrity: sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==}
+    peerDependencies:
+      '@types/react': ^19.3.0
+
+  '@types/react@19.3.0':
+    resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
+
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
@@ -1002,6 +1053,12 @@ packages:
 
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
+
+  '@vitejs/plugin-react@5.2.0':
+    resolution: {integrity: sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1347,6 +1404,17 @@ packages:
   fontkitten@1.0.3:
     resolution: {integrity: sha512-Wp1zXWPVUPBmfoa3Cqc9ctaKuzKAV6uLstRqlR56kSjplf5uAce+qeyYym7F+PHbGTk+tCEdkCW6RD7DX/gBZw==}
     engines: {node: '>=20'}
+
+  framer-motion@13.4.0:
+    resolution: {integrity: sha512-HCpqKM9BTu6UYKtj0u6J1QNxojnnirNcghcSDZ+SkpiL3myxvtsgXPS3ZGEELC2eSma7YiA937rAEXtRyydSXQ==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -1765,6 +1833,23 @@ packages:
   micromark@4.0.2:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
 
+  motion-dom@13.3.0:
+    resolution: {integrity: sha512-AmAnB6pHdZ1vHGzWzuzteG6Q3j1lHKeX/lbST6jGlgm0cjvLUgaCk1xhOuPMOy5SgovN6wnnUdwFrkcsus7Ftg==}
+
+  motion-utils@13.3.0:
+    resolution: {integrity: sha512-sgSschQp7EseHInIlR7hBbMuvet3RA0bs28KPZAXJcGKGdxHGvh1ogpYDilY3bOMtl73EqPNmp75sAKHYPU5sg==}
+
+  motion@13.4.0:
+    resolution: {integrity: sha512-aiNSA29N+vgV5p5cJSB5cFzx8KTuuxB99z8zGtxsaqlwKtBK6sq8YgPRpkVQLkbJMOcLDU0q/ShdT95qpBy/0g==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
     engines: {node: '>=10'}
@@ -1885,6 +1970,19 @@ packages:
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
 
+  react-dom@19.3.0:
+    resolution: {integrity: sha512-JDk8dgif51OjFoDE70+OT9ICyYr+69HlmihNwp1+Nsfbna3t5sIiCa9ZJktDmQ4/1b/rn26hIAR2uYXDMr5r0Q==}
+    peerDependencies:
+      react: ^19.3.0
+
+  react-refresh@0.18.0:
+    resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
+    engines: {node: '>=0.10.0'}
+
+  react@19.3.0:
+    resolution: {integrity: sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==}
+    engines: {node: '>=0.10.0'}
+
   readdirp@5.1.1:
     resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
     engines: {node: '>= 20.19.0'}
@@ -1952,6 +2050,9 @@ packages:
   sax@1.6.1:
     resolution: {integrity: sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q==}
     engines: {node: '>=11.0.0'}
+
+  scheduler@0.28.0:
+    resolution: {integrity: sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -2346,6 +2447,32 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
+  '@astrojs/react@6.0.6(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(esbuild@0.28.2)(jiti@2.7.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
+    dependencies:
+      '@astrojs/internal-helpers': 0.11.0
+      '@types/react': 19.3.0
+      '@types/react-dom': 19.3.0(@types/react@19.3.0)
+      '@vitejs/plugin-react': 5.2.0(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0))
+      devalue: 5.9.2
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
+      ultrahtml: 1.7.0
+      vite: 8.2.2(esbuild@0.28.2)(jiti@2.7.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vitejs/devtools'
+      - esbuild
+      - jiti
+      - less
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   '@astrojs/solid-js@7.0.2(esbuild@0.28.2)(jiti@2.7.0)(solid-js@1.9.15)':
     dependencies:
       solid-js: 1.9.15
@@ -2459,6 +2586,16 @@ snapshots:
       '@babel/types': 7.29.8
 
   '@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7)':
+    dependencies:
+      '@babel/core': 7.29.7
+      '@babel/helper-plugin-utils': 7.29.7
+
+  '@babel/plugin-transform-react-jsx-self@7.29.7(@babel/core@7.29.7)':
+    dependencies:
+      '@babel/core': 7.29.7
+      '@babel/helper-plugin-utils': 7.29.7
+
+  '@babel/plugin-transform-react-jsx-source@7.29.7(@babel/core@7.29.7)':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
@@ -2876,6 +3013,8 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.2.7':
     optional: true
 
+  '@rolldown/pluginutils@1.0.0-rc.3': {}
+
   '@rolldown/pluginutils@1.0.1': {}
 
   '@rollup/plugin-node-resolve@16.0.3':
@@ -3052,6 +3191,14 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  '@types/react-dom@19.3.0(@types/react@19.3.0)':
+    dependencies:
+      '@types/react': 19.3.0
+
+  '@types/react@19.3.0':
+    dependencies:
+      csstype: 3.2.3
+
   '@types/resolve@1.20.2': {}
 
   '@types/unist@2.0.11': {}
@@ -3059,6 +3206,18 @@ snapshots:
   '@types/unist@3.0.3': {}
 
   '@ungap/structured-clone@1.4.0': {}
+
+  '@vitejs/plugin-react@5.2.0(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0))':
+    dependencies:
+      '@babel/core': 7.29.7
+      '@babel/plugin-transform-react-jsx-self': 7.29.7(@babel/core@7.29.7)
+      '@babel/plugin-transform-react-jsx-source': 7.29.7(@babel/core@7.29.7)
+      '@rolldown/pluginutils': 1.0.0-rc.3
+      '@types/babel__core': 7.20.5
+      react-refresh: 0.18.0
+      vite: 8.2.2(esbuild@0.28.2)(jiti@2.7.0)
+    transitivePeerDependencies:
+      - supports-color
 
   acorn-jsx@5.3.2(acorn@8.18.0):
     dependencies:
@@ -3499,6 +3658,15 @@ snapshots:
   fontkitten@1.0.3:
     dependencies:
       tiny-inflate: 1.0.3
+
+  framer-motion@13.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+    dependencies:
+      motion-dom: 13.3.0
+      motion-utils: 13.3.0
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
 
   fsevents@2.3.3:
     optional: true
@@ -4087,6 +4255,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  motion-dom@13.3.0:
+    dependencies:
+      motion-utils: 13.3.0
+
+  motion-utils@13.3.0: {}
+
+  motion@13.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+    dependencies:
+      framer-motion: 13.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
+
   mrmime@2.0.1: {}
 
   ms@2.1.3: {}
@@ -4192,6 +4374,15 @@ snapshots:
   property-information@7.2.0: {}
 
   radix3@1.1.2: {}
+
+  react-dom@19.3.0(react@19.3.0):
+    dependencies:
+      react: 19.3.0
+      scheduler: 0.28.0
+
+  react-refresh@0.18.0: {}
+
+  react@19.3.0: {}
 
   readdirp@5.1.1: {}
 
@@ -4329,6 +4520,8 @@ snapshots:
 
   sax@1.6.1: {}
 
+  scheduler@0.28.0: {}
+
   semver@6.3.1: {}
 
   semver@7.8.5: {}
@@ -4452,8 +4645,7 @@ snapshots:
 
   trough@2.2.0: {}
 
-  tslib@2.8.1:
-    optional: true
+  tslib@2.8.1: {}
 
   typstx@0.0.1:
     dependencies:

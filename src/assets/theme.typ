@@ -5,6 +5,7 @@
 #let right-margin = 0.3in
 
 #let font = "New Computer Modern"
+// #let font = "IBM Plex Sans"
 #let font-size = 11pt
 #let personal-info-font-size = 10.5pt
 #let author-position = center
@@ -88,8 +89,8 @@
   }
 
   align(author-position, [
-    #upper(text(font-size + 10pt, weight: "extrabold")[#name])
-    #v(-1em)
+    #upper(text(font-size + 5pt, weight: "extrabold")[#name])
+    #v(-0.5em)
   ])
 
   align(personal-info-position, text(personal-info-font-size)[
@@ -108,6 +109,7 @@
       let sepSpace = 0.2em
       let items = (
         contact_item(location),
+        contact_item(phone),
         contact_item(email, link-type: "mailto:"),
         contact_item(linkedin, link-type: "https://linkedin.com/in/", prefix: "linkedin.com/in/"),
         contact_item(github, link-type: "https://github.com/", prefix: "github.com/"),
@@ -116,6 +118,8 @@
       items.filter(x => x != none).join(" | ")
     }
   ])
+
+  v(-0.5em)
 
   body
 }
@@ -127,6 +131,14 @@
   grid(
     columns: (1fr, 1fr),
     align(left)[#r1c1], align(right)[#r1c2],
+  )
+}
+
+#let generic_2fr_1fr(r1c1, r1c2) = {
+  grid(
+    columns: (5fr, 2fr),
+    gutter: 15pt,
+    align(left)[#r1c1], align(left)[#r1c2],
   )
 }
 
@@ -203,23 +215,24 @@
   assert(type(end-date) == datetime or type(end-date) == str)
 
   let distance = ""
-  if (type(start-date) == datetime and type(end-date) == datetime) {
-    let days = (end-date - start-date).days()
-    let months = calc.ceil(calc.rem(days, 365) / 30)
-    let lang = context text.lang
-    let t_months = if (lang != "en") [months] else [месяцев]
-    let t_years = if (lang != "en") [years] else [лет]
-    distance = [*#months #t_months |*]
-    let years = calc.floor(days / 365)
-    if (years > 0) {
-      distance = [*#years #t_years #months #t_months |*]
-    }
-  }
+  // if (type(start-date) == datetime and type(end-date) == datetime) {
+  //   let days = (end-date - start-date).days()
+  //   let months = calc.ceil(calc.rem(days, 365) / 30)
+  //   let lang = context text.lang
+  //   let t_months = if (lang != "en") [months] else [месяцев]
+  //   let t_years = if (lang != "en") [years] else [лет]
+  //   distance = [*#months #t_months |*]
+  //   let years = calc.floor(days / 365)
+  //   if (years > 0) {
+  //     distance = [*#years #t_years #months #t_months |*]
+  //   }
+  // }
 
   generic_2x2(
     (1fr, 1fr),
     [*#title*],
-    [#distance *#period_worked(start-date, end-date)*],
+    [*#period_worked(start-date, end-date)*],
+    // [],
     [#company],
     emph(location),
   )
@@ -278,9 +291,10 @@
   generic_2x2(
     (70%, 30%),
     [*#institution*],
-    [*#location*],
-    [#degree, #major],
     period_worked(start-date, end-date),
+    [#degree, #major],
+    [#location],
+    // period_worked(start-date, end-date),
   )
   v(-0.2em)
   if body != [] {

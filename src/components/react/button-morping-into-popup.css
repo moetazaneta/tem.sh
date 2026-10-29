@@ -1,0 +1,85 @@
+.morph-demo {
+  display: grid;
+  place-items: center;
+  min-height: 40svh;
+  padding: 24px;
+}
+
+.morph-trigger,
+.morph-popup {
+  border: 1px solid var(--color-accent);
+  background: var(--color-canvas);
+  color: var(--color-content);
+}
+
+.morph-trigger {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.morph-trigger span { display: block; }
+.morph-trigger:hover { border-color: var(--color-content); }
+
+.morph-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overflow: hidden;
+}
+
+.morph-dialog::backdrop { background: transparent; }
+html:has(.morph-dialog[open]) { overflow: hidden; }
+
+.morph-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.morph-popup {
+  width: min(100%, 440px);
+  max-height: calc(100dvh - 48px);
+  padding: clamp(24px, 6vw, 36px);
+  overflow-y: auto;
+}
+
+.morph-popup h2 {
+  width: fit-content;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.morph-popup p {
+  margin: 24px 0 32px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.morph-close {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  border-top: 1px solid var(--color-divider);
+  padding-top: 16px;
+  cursor: pointer;
+}
+
+.morph-close:hover { color: var(--color-content-muted); }
+.morph-trigger:focus-visible,
+.morph-close:focus-visible {
+  outline: 2px solid var(--color-content);
+  outline-offset: 5px;
+}
